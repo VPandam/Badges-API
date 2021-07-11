@@ -1,1 +1,1 @@
-web: java -jar .\build\libs\Badges-1.0.jar
+web: java -jar build/libs/Badges-1.0.jar
