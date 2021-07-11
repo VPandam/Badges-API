@@ -21,7 +21,12 @@ public class BadgeController {
     @CrossOrigin
     @GetMapping("/all")
     public ResponseEntity<List<BadgeDomain>> getAll() {
-        return new ResponseEntity<>(badgeService.getAll(), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(badgeService.getAll(), HttpStatus.OK);
+        }catch(Error e){
+           return new ResponseEntity<>(HttpStatus.valueOf(e.toString()));
+        }
+
     }
 
     @CrossOrigin
